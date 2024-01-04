@@ -1,0 +1,136 @@
+{
+  "layer": "top",
+  "position": "top",
+  "width": 1920,
+  "margin-top": 8,
+  "margin-left": "auto",
+  "margin-bottom": 48,
+  "margin-right": "auto",
+  "gtk-layer-shell": true,
+  "output": [
+    "eDP-1"
+  ],
+  "modules-left": [
+    "cava",
+    "hyprland/workspaces",
+  ],
+  "modules-center": [
+    "clock",
+    "custom/separator",
+    "mpris"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "network",
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "format": "{icon}",
+    "tooltip": false,
+    "all-outputs": true,
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+  "custom/separator": {
+    "format": "",
+    "interval": "once",
+    "tooltip": false
+  },
+  "mpris": {
+    "interval": 1,
+    "format": "  {status_icon} {title} - {artist} [{position}/{length}]",
+    "status-icons": {
+      "paused": "⏸",
+      "playing": "▶",
+    },
+    "title-len": 20,
+    "artist-len": 20,
+    "tooltip-format": "{player}\nTitle: {title}\nArtist: {artist}\nAlbum: {album}\n[{position}/{length}]"
+  },
+  "cava": {
+    "cava_config": "/home/bop/.config/cava/config",
+    "bars": 18,
+    "method": "pulse",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "",
+      "default": [
+        "",
+        "",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "",
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+  },
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": " {essid}",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-disconnected": "󰖪 No Network",
+    "tooltip": false,
+  },
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-charging": "󰂄 {capacity}%",
+    "format-full": "󰂄 {capacity}%",
+    "tooltip": false,
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a, %d}"
+  },
+}

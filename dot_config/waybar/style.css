@@ -1,0 +1,173 @@
+@import "mocha.css";
+
+/* Global */
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: .9rem;
+  border-radius: 1rem;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  background-color: shade(@base, 0.9);
+}
+
+@keyframes blink_red {
+  to {
+    background-color: @red;
+    color: @base;
+  }
+}
+
+.warning, .critical, .urgent {
+  animation-name: blink_red;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#mode, #clock, #memory, #temperature, #cpu, #custom-weather,
+#mpd, #idle_inhibitor, #backlight, #pulseaudio, #network, 
+#battery, #custom-powermenu, #cava,
+#custom-launcher, #tray, #disk, #custom-pacman, #custom-scratchpad-indicator {
+  padding-left: .6rem;
+  padding-right: .6rem;
+}
+
+#custom-separator {
+  color: @base;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Bar */
+window#waybar {
+  background-color: transparent;
+}
+
+window > box {
+  background-color: transparent;
+  margin: .3rem;
+  margin-bottom: 0;
+}
+
+
+/* Workspaces */
+
+#workspaces:hover {
+  background-color: @mauve;
+}
+
+#workspaces button {
+  padding-right: .4rem;
+  padding-left: .4rem;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  color: @mauve;
+  /* border: .2px solid transparent; */
+  background: transparent;
+}
+
+#workspaces button.focused {
+  background: transparent;
+  color: @mauve;
+}
+
+/*#workspaces button:hover {
+   border: .2px solid transparent; 
+  background: transparent;
+  color: @mauve;
+}
+*/
+/* Tooltip */
+tooltip {
+  background-color: @base;
+}
+
+tooltip label {
+  color: @mauve;
+}
+
+/* battery */
+#battery {
+  color: @teal;
+}
+#battery.full {
+  color: @green;
+}
+#battery.charging{
+  color: @teal;
+}
+#battery.discharging {
+  color: @peach;
+}
+#battery.critical:not(.charging) {
+  color: @pink;
+}
+#custom-powermenu {
+  color: @red;
+}
+
+/* mpd */
+#mpd.paused {
+  color: @pink;
+  font-style: italic;
+}
+#mpd.stopped {
+  color: @rosewater;
+  /* background: transparent; */
+}
+#mpd {
+  color: @lavender;
+}
+
+/* Extra */
+#cava{
+  color: @blue;
+  padding-left: 1.2rem;
+  padding-right: 1rem;
+}
+#custom-launcher {
+  color: @yellow;
+}
+#memory {
+  color: @peach;
+}
+#cpu {
+  color: @blue;
+}
+#clock {
+  color: @blue;
+}
+#idle_inhibitor {
+  color: @green;
+}
+#temperature {
+  color: @sapphire;
+}
+#backlight {
+  color: @green;
+}
+#pulseaudio {
+  color: @sky;  /* not active */
+}
+#network {
+  color: @sapphire; /* not active */
+}
+#network.disconnected {
+  color: @foreground;  /* not active */
+}
+#disk {
+  color: @maroon;
+}
+#custom-pacman{
+  color: @sky;
+}
+#custom-scratchpad-indicator {
+  color: @yellow
+}
+#mpris {
+  color: @sapphire;
+}
+#custom-weather {
+  color: @red;
+}
