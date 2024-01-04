@@ -51,6 +51,7 @@ prettier
 qt5-wayland
 qt6-wayland
 refind
+reflector
 ripgrep
 sbsigntools
 sddm
