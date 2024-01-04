@@ -1,0 +1,12 @@
+cava
+clangd
+hyprshot
+oh-my-zsh-git
+paru
+prismlauncher
+prismlauncher-themes-git
+spicetify-cli-git
+swaylock-effects-improved-git
+vencord-desktop-git
+waybar-cava
+wezterm-git
