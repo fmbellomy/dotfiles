@@ -70,8 +70,8 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=(git ssh-agent)
+zstyle :omz:plugins:ssh-agent identities haruspex
 
 # User configuration
 
