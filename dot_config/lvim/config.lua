@@ -27,8 +27,32 @@ lvim.plugins = {
   },
   {
     "nvim-neorg/neorg",
-    ft = "norg",   -- lazy-load on filetype
-    config = true, -- run require("neorg").setup()
+    ft = "norg", -- lazy-load on filetype
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {
+            config = {
+
+            }
+          },
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp"
+            },
+          },
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                school = "~/notes/school",
+                personal = "~/notes/personal"
+              }
+            }
+          }
+        }
+      })
+    end,
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -51,6 +75,13 @@ lvim.plugins = {
     end,
   },
   { "p00f/clangd_extensions.nvim" },
+  {
+    "ldelossa/nvim-dap-projects",
+    dependencies = { "mfussenegger/nvim-dap" },
+    config = function()
+      require('nvim-dap-projects').search_project_config()
+    end,
+  },
 }
 
 -- replace nvimtree with neo-tree
@@ -120,7 +151,6 @@ end
 local custom_on_init = function(client, bufnr)
   require("lvim.lsp").common_on_init(client, bufnr)
   require("clangd_extensions.config").setup {}
-  require("clangd_extensions.ast").init()
   vim.cmd [[
   command ClangdToggleInlayHints lua require('clangd_extensions.inlay_hints').toggle_inlay_hints()
   command -range ClangdAST lua require('clangd_extensions.ast').display_ast(<line1>, <line2>)

@@ -1,0 +1,37 @@
+#!/bin/bash
+if [ $# -ne 3 ]; then 
+       echo Usage: make-nvim-dap-project [NAME] [DEBUGGER] [LANG]
+       exit 1
+fi
+file=./.nvim/nvim-dap.lua
+name=$1
+debugger=$2
+lang=$3
+debugger_path=$(which ${debugger})
+mkdir .nvim
+cat > $file<<- EOM
+-- If you have no idea what this is for, it's for ldelossa/nvim-dap-projects.
+-- It is very similar to a .vscode/launch.json, and allows specifying per-project debug configurations.
+-- I use it to avoid having to enter the path of the executable I want to debug every single time I want to debug something.
+local dap = require("dap")
+
+-- See https://github.com/mfussenegger/nvim-dap/blob/master/doc/dap.txt for configuration options.
+dap.adapters.${debugger} = {
+  type = "",  -- 'executable', 'server', or 'pipe'
+  command = "${debugger_path}", 
+  name = "${debugger}"
+}
+
+dap.configurations.${lang} = [
+  {
+    name = "${name}",
+    type = "${debugger}",
+    request = "",
+    program = "",
+    cwd = "\${workspaceFolder}",
+    stopOnEntry = false,
+    args = {}
+  }
+]
+
+EOM

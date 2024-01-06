@@ -26,13 +26,20 @@
     "network",
   ],
   "hyprland/workspaces": {
-    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 5
+    },
     "format": "{icon}",
     "tooltip": false,
     "all-outputs": true,
     "format-icons": {
-      "active": "",
-      "default": ""
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "󰙯",
+      "5": "",
+      "default": "",
+      "active": ""
     }
   },
   "custom/separator": {

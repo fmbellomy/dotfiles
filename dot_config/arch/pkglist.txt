@@ -29,11 +29,11 @@ libpulse
 linux
 linux-firmware
 linux-headers
+lldb
 meson
 mpv
 nano
 neofetch
-neovim
 network-manager-applet
 networkmanager
 noto-fonts

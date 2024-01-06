@@ -1,6 +1,7 @@
 cava
-clangd
+codelldb-bin
 hyprshot
+neovim-git
 oh-my-zsh-git
 paru
 prismlauncher
