@@ -30,9 +30,12 @@ linux
 linux-firmware
 linux-headers
 lldb
+lxappearance
+man-db
 meson
 mpv
 nano
+ncspot
 neofetch
 neovide
 network-manager-applet
@@ -41,7 +44,9 @@ noto-fonts
 noto-fonts-cjk
 npm
 nvidia-dkms
+nvidia-prime
 obs-studio
+papirus-icon-theme
 pavucontrol
 pipewire
 pipewire-alsa
@@ -50,6 +55,7 @@ pipewire-pulse
 plymouth
 prettier
 qt5-wayland
+qt5ct
 qt6-wayland
 refind
 reflector
@@ -65,6 +71,7 @@ swayidle
 ttf-jetbrains-mono-nerd
 unzip
 vim
+wf-recorder
 wget
 wireless_tools
 wireplumber

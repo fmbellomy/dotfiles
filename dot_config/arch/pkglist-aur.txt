@@ -1,6 +1,8 @@
+catppuccin-gtk-theme-mocha
 cava
 codelldb-bin
 hyprshot
+lightly-qt
 neovim-git
 oh-my-zsh-git
 paru
@@ -10,4 +12,3 @@ spicetify-cli-git
 swaylock-effects-improved-git
 vencord-desktop-git
 waybar-cava
-wezterm-git

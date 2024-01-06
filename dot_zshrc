@@ -106,6 +106,10 @@ alias clr="clear && bny"
 alias nvim="lvim"
 alias vim="lvim"
 
+function ghclone {
+  git clone "git@github.com:$1"
+}
+
 export SHELL="/usr/bin/zsh"
 export EDITOR="/home/bop/.local/bin/lvim"
 bny
