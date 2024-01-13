@@ -1,6 +1,7 @@
 catppuccin-gtk-theme-mocha
 cava
 codelldb-bin
+hollywood
 hyprshot
 lightly-qt
 neovim-git

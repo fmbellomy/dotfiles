@@ -3,6 +3,8 @@ amd-ucode
 awesome-terminal-fonts
 base
 base-devel
+bat
+bottom
 btrfs-progs
 chezmoi
 dkms
@@ -14,6 +16,7 @@ fd
 firefox
 fzf
 git
+gparted
 grim
 gst-plugin-pipewire
 htop
@@ -48,11 +51,13 @@ nvidia-prime
 obs-studio
 papirus-icon-theme
 pavucontrol
+perl-rename
 pipewire
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
 plymouth
+polkit-kde-agent
 prettier
 qt5-wayland
 qt5ct

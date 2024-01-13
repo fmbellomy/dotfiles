@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+audio=alsa_output.pci-0000_06_00.6.analog-stereo
+filename=$(date +"%Y_%m_%d+%H_%M_%S").mkv
+tempfile=/var/tmp/RECORDING
+if [ -f $(pgrep wf-recorder) ]; then
+    notify-send "Recording Started ($audio)"
+	if [ "$1" == "-s" ]; then 
+    touch $tempfile
+    wf-recorder -f $HOME/Videos/wf-recorder/$filename -a "$audio" -g "$(slurp -c "#FFFFFF")" >/dev/null 2>&1 &
+	else
+    touch $tempfile
+		wf-recorder -f $HOME/Videos/wf-recorder/$filename -a "$audio" >/dev/null 2>&1 &
+	fi
+else
+  rm $tempfile
+	killall -s SIGINT wf-recorder
+	notify-send "Recording Complete"
+	while [ ! -z $(pgrep -x wf-recorder) ]; do wait; done
+	name="$(zenity --entry --text "enter a filename")"
+  name="${name// /_}"
+  mv $(ls -d $HOME/Videos/wf-recorder/* -t | head -n1) $HOME/Videos/wf-recorder/${name}.mkv
+fi
+
