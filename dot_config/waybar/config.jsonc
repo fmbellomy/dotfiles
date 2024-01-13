@@ -148,7 +148,15 @@
     "position": "bottom",
     "layer": "top",
     "modules-right": [
+      "custom/wf-recorder",
       "tray" // pretty sure this should only be nm-applet
     ],
+    "custom/wf-recorder": {
+      "format": "{}",
+      "interval": 1,
+      "exec": "test -f /var/tmp/RECORDING && echo '' || echo",
+      "tooltip": "false",
+      "on-click": "exec $HOME/.local/bin/screenrecord -s",
+    }
   }
 ]

@@ -13,7 +13,8 @@
 #mode, #clock, #memory, #temperature, #cpu, #custom-weather,
 #mpd, #idle_inhibitor, #backlight, #pulseaudio, #network, 
 #battery, #custom-powermenu, #cava,
-#custom-launcher, #tray, #disk, #custom-pacman, #custom-scratchpad-indicator {
+#custom-launcher, #tray, #disk, #custom-pacman, #custom-scratchpad-indicator,
+#custom-wf-recorder{
   padding-left: .6rem;
   padding-right: .6rem;
 }
@@ -28,7 +29,9 @@ window > box {
   margin: .3rem;
   margin-bottom: 0;
 }
-
+#custom-wf-recorder {
+  color: @red;
+}
 
 /* Workspaces */
 
